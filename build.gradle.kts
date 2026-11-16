@@ -6,12 +6,13 @@ buildscript {
 	repositories {
 		google()
 		mavenCentral()
+		maven("https://maven.aliucord.com/releases")
 		maven("https://maven.aliucord.com/snapshots")
 		maven("https://jitpack.io")
 	}
 	dependencies {
 		classpath("com.android.tools.build:gradle:7.0.4")
-		classpath("com.github.Aliucord:gradle:main-SNAPSHOT") {
+		classpath("com.aliucord:gradle:753ad25") {
 			exclude("com.github.js6pak", "jadb")
 		}
 		classpath("com.aliucord:jadb:1.2.1-SNAPSHOT")
@@ -33,8 +34,8 @@ subprojects {
 
 	aliucord {
 		author("rushii", 0L, false)
-		updateUrl.set("https://raw.githubusercontent.com/rushiiMachine/aliucord-plugins/builds/updater.json")
-		buildUrl.set("https://raw.githubusercontent.com/rushiiMachine/aliucord-plugins/builds/%s.zip")
+		updateUrl.set("https://raw.githubusercontent.com/kairusds/rm-aliucord-plugins/builds/updater.json")
+		buildUrl.set("https://raw.githubusercontent.com/kairusds/rm-aliucord-plugins/builds/%s.zip")
 	}
 
 	android {
@@ -72,7 +73,7 @@ subprojects {
 		val compileOnly by configurations
 
 		discord("com.discord:discord:aliucord-SNAPSHOT")
-		compileOnly("com.aliucord:Aliucord:main-SNAPSHOT")
+		compileOnly("com.aliucord:Aliucord:2.4.0")
 	}
 }
 
